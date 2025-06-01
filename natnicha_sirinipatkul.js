@@ -14,8 +14,13 @@ function getMinMove(start,target,brokenTiles){
     let [sx, sy] = toPositionXY(start);
   let [tx, ty] = toPositionXY(target);
 
-  let visited = Array.from({ length: 8 }, () => Array(8).fill(false));
-  let broken = brokenTiles.map(t => t.toUpperCase());
+let visited = [];
+for (let i = 0; i < 8; i++) {
+  visited[i] = [];
+  for (let j = 0; j < 8; j++) {
+    visited[i][j] = false;
+  }
+}
 
 
   
